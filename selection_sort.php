@@ -20,12 +20,18 @@ return $array;
 }
 $start_time = microtime(true);
 $unsorted_array = array(2,4,3,7,9,1,5,6,8);
+$unsorted_array = array();
+for($i =0; $i <=10000; $i++){
+    $unsorted_array[] = $i;
+}
+
 $count = count($unsorted_array)-1;
 $sorted_array = selection_sort($unsorted_array, $count);
 
 $end_time = microtime(true);
 
 print_r($sorted_array);
-echo 'executed in'.number_format(($end_time-$start_time),3); ;
+echo 'executed in'.number_format(($end_time-$start_time),3).'seconds';
+echo "\n";
 
 ?>
